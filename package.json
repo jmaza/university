@@ -2,7 +2,7 @@
   "name": "hapi-university",
   "version": "0.0.2",
   "description": "Community learning experiment",
-  "main": "lib/index.js",
+  "main": "lib/start.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/hapijs/university.git"
@@ -22,6 +22,12 @@
     "hoek": "4.x.x"
   },
   "scripts": {
-    "start": "node lib/index.js"
+    "start": "node lib/start.js",
+    "test": "lab -a code -t 100 -L",
+    "test-cov-html": "lab -a code -r html -o coverage.html -L"
+  },
+  "devDependencies": {
+    "code": "^4.0.0",
+    "lab": "^13.0.1"
   }
 }
