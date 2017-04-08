@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/hapijs/university",
   "dependencies": {
+    "boom": "^4.3.1",
     "glue": "4.x.x",
     "handlebars": "4.x.x",
     "hapi": "16.x.x",
