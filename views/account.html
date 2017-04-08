@@ -5,12 +5,13 @@
     <link rel="stylesheet" href="/styles/styles.css">
   </head>
   <body>
+    {{#if admin}}
+        <a href="/admin">Admin Panel</a>
+    {{/if}}
     {{#if user}}
     <h2>Welcome {{user.username}}</h2>
-    <img src="/images/logo.png" alt="Logo"/>
-    <h3>A Community Learning Experiment</h3>
-    <a href="/account">My Account</a>
     <input id="btnLogout" type="submit" value="Log Out">
+    <a href="/home">Home</a>
     {{else}}
     <br/>
     <a href="/login">Login</a>
