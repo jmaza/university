@@ -11,6 +11,7 @@
             <h1>{{user.first}} {{user.username}}</h1>
             <a href="/account">{{user.username}} 's Account</a><br/><br/>
             <a id="btnLogout" href="/logout">Log Out</a>
+            <input type="hidden" name="crumb" value="{{crumb}}"/>
         {{else}}
             <a href="/login">Login</a><br/><br/>
         {{/if}}

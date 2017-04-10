@@ -15,7 +15,7 @@ document.onreadystatechange = function () {
 var internals = {};
 
 
-internals.executeAJAX = function (url, data, callback) {
+internals.executeAJAX = function (url, data, crumb, callback) {
 
     internals.clearErrors();
 
@@ -40,6 +40,7 @@ internals.executeAJAX = function (url, data, callback) {
     };
 
     request.setRequestHeader('Content-Type', 'application/json');
+    request.setRequestHeader('x-csrf-token', crumb);
 
     request.send(JSON.stringify(data));
 
@@ -122,12 +123,14 @@ document.onreadystatechange = function () {
 
             var username = document.getElementsByName('username')[0].value;
             var password = document.getElementsByName('password')[0].value;
+            var crumb = document.getElementsByName('crumb')[0].value;
             console.log('username: ' + username);
             console.log('password: ' + password);
+             console.log('cr: ' + crumb);
             var requestData = { username: username, password: password };
 
 
-            internals.executeAJAX('/login', requestData, function (request) {
+            internals.executeAJAX('/login', requestData, crumb, function (request) {
 
                 if (request.status === 200) {
 

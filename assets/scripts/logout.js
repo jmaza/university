@@ -2,7 +2,7 @@
 var internals = {};
 
 
-internals.executeAJAX = function (url, data, callback) {
+internals.executeAJAX = function (url, data, crumb, callback) {
 
     var request = new XMLHttpRequest();
 
@@ -25,6 +25,7 @@ internals.executeAJAX = function (url, data, callback) {
     };
 
     request.setRequestHeader('Content-Type', 'application/json');
+    request.setRequestHeader('x-csrf-token', crumb);
 
     request.send(JSON.stringify(data));
 
@@ -86,10 +87,10 @@ document.onreadystatechange = function () {
 
             // Get submitted form data
             var requestData = '{ request: \'logout\' }';
+            var crumb = document.getElementsByName('crumb')[0].value;
 
 
-
-            internals.executeAJAX('/logout', requestData, function (request) {
+            internals.executeAJAX('/logout', requestData, crumb, function (request) {
 
                 if (request.status === 200) {
 

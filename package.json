@@ -20,6 +20,7 @@
   "dependencies": {
     "async": "2.x.x",
     "boom": "4.x.x",
+    "crumb": "^6.0.3",
     "glue": "4.x.x",
     "handlebars": "4.x.x",
     "hapi": "16.x.x",
