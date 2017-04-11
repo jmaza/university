@@ -22,6 +22,10 @@
     "boom": "4.x.x",
     "crumb": "^6.0.3",
     "glue": "4.x.x",
+    "good": "^7.1.0",
+    "good-console": "^6.4.0",
+    "good-file": "^6.0.1",
+    "good-squeeze": "^5.0.2",
     "handlebars": "4.x.x",
     "hapi": "16.x.x",
     "hapi-auth-basic": "4.x.x",
@@ -29,6 +33,7 @@
     "hoek": "4.x.x",
     "inert": "4.x.x",
     "joi": "10.x.x",
+    "lout": "^10.0.1",
     "vision": "4.x.x"
   },
   "scripts": {
